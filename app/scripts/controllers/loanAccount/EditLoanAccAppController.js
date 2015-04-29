@@ -249,6 +249,12 @@
 
 
             scope.submit = function () {
+
+                scope.formData.loanTermFrequency = scope.formData.numberOfRepayments * scope.formData.repaymentEvery;
+                alert("test" + scope.formData.loanTermFrequency);
+                scope.formData.loanTermFrequencyType = scope.formData.repaymentFrequencyType;
+                alert("test" + scope.formData.loanTermFrequencyType);
+
                 // Make sure charges and collaterals are empty before initializing.
                 delete scope.formData.charges;
                 delete scope.formData.collateral;

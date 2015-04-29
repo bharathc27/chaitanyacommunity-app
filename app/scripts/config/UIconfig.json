@@ -3,11 +3,11 @@
   "uiDisplayConfigurations": {
 	"loanAccount": {
       "isHiddenField": {
-        "fundId": true,
+        "fundId": false,
         "linkAccountId": true,
         "createStandingInstruction": true,
-        "numberOfRepayments": true,
-        "repaymentEvery": true,
+        "numberOfRepayments": false,
+        "repaymentEvery": false,
         "repaymentFrequencyType": true,
         "repaymentFrequencyNthDayType": true,
         "repaymentFrequencyDayOfWeekType": true,
@@ -21,7 +21,7 @@
         "transactionProcessingStrategyId": true,
         "graceOnInterestPayment": true,
         "graceOnArrearsAgeing": true,
-        "loanTermFrequencyType": true,
+        "loanTermFrequencyType": false,
         "fixedEmiAmount": true
       },
       "isHiddenSection": {
@@ -44,8 +44,8 @@
       "isHiddenField": {
         "linkAccountId": true,
         "createStandingInstruction": true,
-        "numberOfRepayments": true,
-        "repaymentEvery": true,
+        "numberOfRepayments": false,
+        "repaymentEvery": false,
         "repaymentFrequencyType": true,
         "repaymentFrequencyNthDayType": true,
         "repaymentFrequencyDayOfWeekType": true,

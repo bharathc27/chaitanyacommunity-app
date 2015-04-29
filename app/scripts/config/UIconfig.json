@@ -3,7 +3,7 @@
   "uiDisplayConfigurations": {
 	"loanAccount": {
       "isHiddenField": {
-        "fundId": false,
+        "fundId": true,
         "linkAccountId": true,
         "createStandingInstruction": true,
         "numberOfRepayments": true,

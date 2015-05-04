@@ -21,8 +21,9 @@
         "transactionProcessingStrategyId": true,
         "graceOnInterestPayment": true,
         "graceOnArrearsAgeing": true,
-        "loanTermFrequencyType": false,
-        "fixedEmiAmount": true
+        "loanTermFrequencyType": true,
+        "fixedEmiAmount": true,
+        "maxOutstandingLoanBalance": true
       },
       "isHiddenSection": {
         "interestRecalculationSection": true,
@@ -60,7 +61,8 @@
         "graceOnInterestPayment": true,
         "graceOnArrearsAgeing": true,
         "loanTermFrequencyType": true,
-        "fixedEmiAmount": true
+        "fixedEmiAmount": true,
+        "maxOutstandingLoanBalance": true
       },
       "isHiddenSection": {
         "interestRecalculationSection": true,
@@ -72,7 +74,7 @@
         "submittedOnDate": true,
         "externalId": true,
         "displayName": true,
-        "interestRatePerPeriod": true
+        "interestRatePerPeriod": false
       }
     },
 

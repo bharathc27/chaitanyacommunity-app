@@ -536,7 +536,11 @@
                 if(scope.loandetails.fixedEmiAmount != '') {
                     this.formData.fixedEmiAmount = scope.loandetails.fixedEmiAmount;
                 }
+                scope.intrestChargedOnDate = new Date(scope.loandetails.interestChargedFromDate);
+                scope.repaymentStartingFrom = new Date(scope.loandetails.expectedFirstRepaymentOnDate);
 
+                this.formData.interestChargedFromDate = dateFilter(scope.intrestChargedOnDate, scope.df);
+                this.formData.repaymentsStartingFromDate = dateFilter(scope.repaymentStartingFrom, scope.df);
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 this.formData.clientId = scope.loandetails.clientId;

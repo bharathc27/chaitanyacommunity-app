@@ -25,7 +25,12 @@
                 <label class="control-label col-sm-2">{{'label.input.village' | translate}}<span class="required">*</span></label>
 
                 <div class="col-sm-3">
-                    <input type="text" id="villageName" ng-model="formData.villageName" class="form-control"/>
+                    <input type="text" id="villageName" name = "villageName" ng-model="formData.villageName" class="form-control"
+                           required late-Validate />
+
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createvillageform" valattribute="villageName"/>
                 </div>
             </div>
             <div class="form-group">
@@ -46,28 +51,44 @@
                 <label class="control-label col-sm-2">{{'label.input.taluk' | translate}}<span class="required">*</span></label>
 
                 <div class="col-sm-3">
-                    <input type="text" id="taluk" ng-model="formData.taluk" class="form-control"/>
+                    <input type="text" id="taluk" name = "taluk" ng-model="formData.taluk" class="form-control"
+                           required late-Validate />
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createvillageform" valattribute="taluk"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">{{'label.input.district' | translate}}<span class="required">*</span></label>
 
                 <div class="col-sm-3">
-                    <input type="text" id="district" ng-model="formData.district" class="form-control"/>
+                    <input type="text" id="district" name = "district" ng-model="formData.district" class="form-control"
+                           required late-Validate />
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createvillageform" valattribute="district"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">{{'label.input.pincode' | translate}}<span class="required">*</span></label>
 
                 <div class="col-sm-3">
-                    <input type="text" id="pincode" ng-model="formData.pincode" class="form-control"/>
+                    <input type="text" id="pincode" name="pincode" ng-model="formData.pincode" class="form-control"
+                           required late-Validate />
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createvillageform" valattribute="pincode"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">{{'label.input.state' | translate}}<span class="required">*</span></label>
 
                 <div class="col-sm-3">
-                    <input type="text" id="state" ng-model="formData.state" class="form-control"/>
+                    <input type="text" id="state" name="state" ng-model="formData.state" class="form-control"
+                           required late-Validate />
+                </div>
+                <div class="col-sm-2">
+                    <form-validate valattributeform="createvillageform" valattribute="state"/>
                 </div>
             </div>
 

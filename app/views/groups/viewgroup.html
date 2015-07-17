@@ -148,8 +148,10 @@
 					                    <tr>
 							                <th>{{ 'label.heading.nextmeetingon' | translate }}</th>
 							                <td><span class="padded-td">{{group.collectionMeetingCalendar.nextTenRecurringDates[0] | DateFormat}}&nbsp;
-					                            <a href="#/editcalendar/{{entityType}}/{{entityId}}/{{group.collectionMeetingCalendar.id}}"
+												<div ng-hide="true">
+					                            <a  href="#/editcalendar/{{entityType}}/{{entityId}}/{{group.collectionMeetingCalendar.id}}"
 					                               ng-show="group.collectionMeetingCalendar"><i class="icon-edit icon-white"></i></a>
+												</div>
 					                            <span class="marginleftn7px" data-ng-hide="group.collectionMeetingCalendar.nextTenRecurringDates[0]">{{ 'label.unassigned' | translate }}</span></span>
 							                </td>
 							            </tr>

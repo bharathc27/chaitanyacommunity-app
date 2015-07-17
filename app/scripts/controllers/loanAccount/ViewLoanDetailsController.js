@@ -491,56 +491,64 @@
                 delete scope.formData.charges;
                 scope.formData.disbursementData = [];
 
-                        scope.loanApprovedDate = new Date(scope.loandetails.timeline.approvedOnDate);
-                        scope.loanApprovedDate = dateFilter(scope.loanApprovedDate, scope.df);
+                scope.loanApprovedDate = new Date(scope.loandetails.timeline.approvedOnDate);
+                scope.loanApprovedDate = dateFilter(scope.loanApprovedDate, scope.df);
 
-                        // scope.disbursedData = [];
+                // scope.disbursedData = [];
 
-                        if(scope.loandetails.disbursementDetails) {
-                            for (var i in scope.loandetails.disbursementDetails) {
-                                scope.loandetails.disbursementDetails[i].actualDisbursementDate = dateFilter(scope.loandetails.disbursementDetails[i].actualDisbursementDate, scope.df);
-                                if (scope.loandetails.disbursementDetails[i].actualDisbursementDate) {
-                                    scope.disbursedDate = new Date(scope.loandetails.disbursementDetails[i].actualDisbursementDate);
-                                    scope.disbursedDate = dateFilter(scope.disbursedDate, scope.df)
+                if (scope.loandetails.disbursementDetails) {
+                    for (var i in scope.loandetails.disbursementDetails) {
+                        scope.loandetails.disbursementDetails[i].actualDisbursementDate = dateFilter(scope.loandetails.disbursementDetails[i].actualDisbursementDate, scope.df);
+                        if (scope.loandetails.disbursementDetails[i].actualDisbursementDate) {
+                            scope.disbursedDate = new Date(scope.loandetails.disbursementDetails[i].actualDisbursementDate);
+                            scope.disbursedDate = dateFilter(scope.disbursedDate, scope.df)
 
-                                    scope.formData.disbursementData.push({
-                                        expectedDisbursementDate: scope.disbursedDate,
-                                        principal: scope.loandetails.disbursementDetails[i].principal
-                                    });
-                                }
+                            scope.formData.disbursementData.push({
+                                expectedDisbursementDate: scope.disbursedDate,
+                                principal: scope.loandetails.disbursementDetails[i].principal
+                            });
+                        }
                     }
                 }
 
-                if(scope.loandetails.disbursementDetails != '') {
+                if (scope.loandetails.disbursementDetails != '') {
                     scope.expectedDisbursement = new Date(scope.loandetails.disbursementDetails[0].actualDisbursementDate);
-                }else{
+                } else {
                     scope.expectedDisbursement = new Date(scope.loandetails.timeline.actualDisbursementDate);
                 }
 
                 scope.formData.charges = [];
-                for(var i in scope.loandetails.charges) {
-                    if(scope.loandetails.charges[i].dueDate != null) {
+                for (var i in scope.loandetails.charges) {
+                    if (scope.loandetails.charges[i].dueDate != null) {
                         scope.chargeDueDate = new Date(scope.loandetails.charges[i].dueDate);
                     }
-                    scope.formData.charges.push({chargeId: scope.loandetails.charges[i].chargeId, amount: scope.loandetails.charges[i].amount,
-                        dueDate: dateFilter(scope.chargeDueDate, scope.df)});
+                    scope.formData.charges.push({
+                        chargeId: scope.loandetails.charges[i].chargeId, amount: scope.loandetails.charges[i].amount,
+                        dueDate: dateFilter(scope.chargeDueDate, scope.df)
+                    });
                 }
 
 
-                if(scope.loandetails.group) {
+                if (scope.loandetails.group) {
                     if (scope.loandetails.group.id != '') {
                         this.formData.groupId = scope.loandetails.group.id;
                     }
                 }
 
-                if(scope.loandetails.fixedEmiAmount != '') {
+                if (scope.loandetails.fixedEmiAmount != '') {
                     this.formData.fixedEmiAmount = scope.loandetails.fixedEmiAmount;
                 }
-                scope.intrestChargedOnDate = new Date(scope.loandetails.interestChargedFromDate);
-                scope.repaymentStartingFrom = new Date(scope.loandetails.expectedFirstRepaymentOnDate);
 
-                this.formData.interestChargedFromDate = dateFilter(scope.intrestChargedOnDate, scope.df);
-                this.formData.repaymentsStartingFromDate = dateFilter(scope.repaymentStartingFrom, scope.df);
+                if (scope.loandetails.expectedFirstRepaymentOnDate) {
+                    scope.repaymentStartingFrom = new Date(scope.loandetails.expectedFirstRepaymentOnDate);
+                    this.formData.repaymentsStartingFromDate = dateFilter(scope.repaymentStartingFrom, scope.df);
+                }
+                if (scope.loandetails.interestChargedFromDate) {
+                    scope.intrestChargedOnDate = new Date(scope.loandetails.interestChargedFromDate);
+                    this.formData.interestChargedFromDate = dateFilter(scope.intrestChargedOnDate, scope.df);
+                }
+
+
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
                 this.formData.clientId = scope.loandetails.clientId;

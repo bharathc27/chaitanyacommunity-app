@@ -548,6 +548,10 @@
                     this.formData.interestChargedFromDate = dateFilter(scope.intrestChargedOnDate, scope.df);
                 }
 
+                if(scope.loandetails.interestRecalculationData.calendarData) {
+                    this.formData.calendarId = scope.loandetails.interestRecalculationData.calendarData.id;
+                }
+                this.formData.syncDisbursementWithMeeting = scope.loandetails.syncDisbursementWithMeeting;
 
                 this.formData.locale = scope.optlang.code;
                 this.formData.dateFormat = scope.df;
@@ -610,7 +614,7 @@
                 var popupWin = window.open('', '_blank', 'width=300,height=300');
                 popupWin.document.open();
                 popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="styles/repaymentscheduleprintstyle.css" />' +
-                '</head><body onload="window.print()">' + printContents + '</body></html>');
+                '</head><body onload="window.print()">' + printContents + '<br><br><table class="table"><tr><td width="210"><h4>Credit Officer</h4></td><td width="210"><h4>Branch Manager</h4></td><td><h4>Customer Signature</h4></td></tr></table></body></html>');
                 popupWin.document.close();
             }
 

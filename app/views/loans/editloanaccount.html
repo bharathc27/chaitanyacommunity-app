@@ -407,7 +407,7 @@
                 <th>{{'label.heading.date' | translate}}</th>
                 <th>{{'label.heading.actions' | translate}}</th>
             </tr>
-            <tr ng-repeat="charge in charges" ng-hide="charge.chargeTimeType.id == 12">
+            <tr ng-repeat="charge in charges">
                 <td>{{charge.name}},{{charge.currency.displaySymbol}}</td>
                 <td>{{charge.chargeCalculationType.value}}</td>
                 <td><input id="{{charges[$index].amount}}" class="form-control" number-format type="text" ng-model="charge.amountOrPercentage"

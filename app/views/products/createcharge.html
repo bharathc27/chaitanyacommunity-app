@@ -20,7 +20,7 @@
                     </select>
                 </div>
                 <div class="col-sm-2">
-                	<form-validate valattributeform="createchargeform" valattribute="chargeappliesto"/>
+                    <form-validate valattributeform="createchargeform" valattribute="chargeappliesto"/>
                 </div>
             </div>
             <hr/>
@@ -74,11 +74,11 @@
                         <select id="chargeCalculationType" name="chargecalculation"
                                 ng-model="formData.chargeCalculationType"
                                 ng-options="chargecalculation.id as chargecalculation.value for chargecalculation in chargeCalculationTypeOptions"
-                                value="{{chargecalculation.id}}" class="form-control" required ng-change="changeChargeCalculationType(formData.chargeCalculationType)">
+                                value="{{chargecalculation.id}}" class="form-control" required>
                             <option value="">{{'label.selectone' | translate}}</option>
                         </select>
                     </div>
-                     <div class="col-sm-3">
+                    <div class="col-sm-3">
                         <form-validate valattributeform="createchargeform" valattribute="chargecalculation"/>
                     </div>
                 </div>
@@ -108,28 +108,12 @@
                     </div>
                 </div>
                 <div class="form-group" ng-show="showFrequencyOptions">
-                	<label class="control-label col-sm-2">{{ 'label.input.addfeefrequency' | translate }}&nbsp;</label>
-					<div class="col-sm-3">
+                    <label class="control-label col-sm-2">{{ 'label.input.addfeefrequency' | translate }}&nbsp;</label>
+                    <div class="col-sm-3">
                         <label class="checkbox">
-							<input id="addfeefrequency" type="checkbox" ng-model="addfeefrequency" ng-true-value="true"
+                            <input id="addfeefrequency" type="checkbox" ng-model="addfeefrequency" ng-true-value="true"
                                    ng-false-value="false">
-						</label>
-					</div>
-                </div>
-
-                <div class="form-group" ng-show="showDisbursementChargeField">
-                    <label class="control-label col-sm-2">{{'label.input.disbursementchargetype' | translate}}<span
-                                class="required">*</span></label>
-                    <div class="col-sm-3">
-                        <select ng-disabled="disable" id="disbursementcharge" name="showDisbursementChargeField"
-                             ng-model="formData.disbursementChargeType"
-                             ng-options="disbursementchargetype.id as disbursementchargetype.value for disbursementchargetype in disbursementChargeTypeOptions"
-                             value="{{disbursementChargeType.id}}" ng-required="showDisbursementChargeField" class="form-control">
-                            <option value="">{{'label.selectone' | translate}}</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-3">
-                        <form-validate valattributeform="createchargeform" valattribute="showDisbursementChargeField"/>
+                        </label>
                     </div>
                 </div>
 
@@ -139,13 +123,13 @@
 
                     <div class="col-sm-3">
                         <select id="feeFrequency" name="feeFrequency" ng-model="formData.feeFrequency"
-	                            ng-options="frequency.id as frequency.value for frequency in template.feeFrequencyOptions"
-	                            value="{{frequency.id}}" class="form-control">
-	                        <option value="">{{'label.selectone' | translate}}</option>
-	                    </select>
+                                ng-options="frequency.id as frequency.value for frequency in template.feeFrequencyOptions"
+                                value="{{frequency.id}}" class="form-control">
+                            <option value="">{{'label.selectone' | translate}}</option>
+                        </select>
                     </div>
                     <div class="col-sm-3">
-                    	<form-validate valattributeform="createchargeform" valattribute="chargeappliesto"/>       
+                        <form-validate valattributeform="createchargeform" valattribute="chargeappliesto"/>
                     </div>
                 </div>
                 <div class="form-group" ng-show="addfeefrequency">

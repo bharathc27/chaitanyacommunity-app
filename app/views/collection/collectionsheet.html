@@ -111,7 +111,7 @@
 	                        <b>{{group.groupName}}</b>
 	                    </td>
 	                </tr>
-	                <tr ng-repeat="client in group.clients">
+	                <tr ng-repeat="client in group.clients" ng-show="client.loans != ''">
 						<td>
 						<div class="table-cell-scrollable">
 							({{client.clientId}}) {{client.clientName}}
@@ -161,13 +161,13 @@
 	                    <th>{{'label.heading.attendance' | translate}}</th>
 	                </tr>
 	                </thead>
-	                <tbody ng-repeat="group in collectionsheetdata.groups">
+	                <tbody ng-repeat="group in collectionsheetdata.groups" >
 	                <tr>
 	                    <td scope="colgroup" colspan="{{collectionsheetdata.loanProducts.length}}">&nbsp;</td>
 	                    <td scope="colgroup" colspan="{{collectionsheetdata.savingsProducts.length}}">&nbsp;</td>
 	                    <td colspan="1" scope="colgroup">&nbsp;</td>
 	                </tr>
-	                <tr ng-repeat="client in group.clients">
+	                <tr ng-repeat="client in group.clients" ng-show="client.loans != ''">
 	                    <td ng-repeat="loanproduct in collectionsheetdata.loanProducts">
 	
 										<span ng-repeat="loan in client.loans" ng-show="loanproduct.id == loan.productId">

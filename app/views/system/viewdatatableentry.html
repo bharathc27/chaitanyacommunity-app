@@ -94,7 +94,7 @@
                          <select ng-show="fieldType(columnHeader.columnDisplayType) == 'SELECT'"
                                  data-ng-switch-when="CODEVALUE"
                                  chosen="columnHeader.columnValues"
-                                 ng-model="formData.columnValue"
+                                 ng-model="formData[columnHeader.columnName]"
                                  ng-options="columnValue as columnValue.value for columnValue in columnHeader.columnValues "
                                  value="{{columnValue.id}}"
                                  class="form-control"

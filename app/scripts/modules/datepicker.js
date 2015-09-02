@@ -377,7 +377,7 @@ angular.module('modified.datepicker', ['strap.position'])
     }])
 
     .constant('datepickerPopConfig', {
-        dateFormat: 'dd MMMM yyyy',
+        dateFormat: 'dd/MM/yyyy',
         closeOnDateSelection: true
     })
 

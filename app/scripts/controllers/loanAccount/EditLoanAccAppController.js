@@ -166,6 +166,12 @@
                 }
             }
 
+            scope.$watch('formData.expectedDisbursementDate', function(){
+                if(scope.formData.expectedDisbursementDate != '' && scope.formData.expectedDisbursementDate != undefined){
+                    scope.formData.interestChargedFromDate = scope.formData.expectedDisbursementDate;
+                }
+            });
+
             scope.deleteCharge = function (index) {
                 scope.charges.splice(index, 1);
             }

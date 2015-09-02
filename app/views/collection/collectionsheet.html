@@ -113,9 +113,9 @@
 	                </tr>
 	                <tr ng-repeat="client in group.clients" ng-show="client.loans != ''">
 						<td>
-						<div class="table-cell-scrollable">
-							({{client.clientId}}) {{client.clientName}}
-						</div>
+						<span class="table-cell-scrollable" ng-repeat="loan in client.loans">
+							({{loan.loanId}}) <span ng-show="$last">{{client.clientName}}</span>
+						</span>
 					</td>
 	                </tr>
 	                <tr>

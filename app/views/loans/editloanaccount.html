@@ -180,7 +180,7 @@
                 <td class="paddedbottom10" ng-hide="response.uiDisplayConfigurations.editLoanAccount.isHiddenField.interestChargedFromDate == true">
                     <input id="interestChargedFromDate" type="text" datepicker-pop="dd MMMM yyyy" class="form-control"
                            ng-model="formData.interestChargedFromDate" is-open="opened2" min="minDate"
-                           max="'2020-06-22'"/>
+                           max="'2020-06-22'" ng-disabled="true"/>
                 </td>
             </tr>
             <tr>
@@ -404,7 +404,9 @@
                 <th>{{'label.heading.type' | translate}}</th>
                 <th>{{'label.heading.amount' | translate}}</th>
                 <th>{{'label.heading.collectedon' | translate}}</th>
-                <th>{{'label.heading.date' | translate}}</th>
+                <th>
+                    <span ng-repeat="charge in charges" ng-show="charge.chargeTimeType.value == 'Specified due date'">{{'label.heading.date' | translate}}</span>
+                </th>
                 <th>{{'label.heading.actions' | translate}}</th>
             </tr>
             <tr ng-repeat="charge in charges">
@@ -414,7 +416,7 @@
                            placeholder="{{'label.input.amount' | translate}}"></td>
                 <td>{{charge.chargeTimeType.value}}</td>
                 <td>
-                    <input id="charges[{{$index}}].duedate" type="text" datepicker-pop="dd MMMM yyyy" class="form-control"
+                    <input ng-show="charge.chargeTimeType.value == 'Specified due date'" id="charges[{{$index}}].duedate" type="text" datepicker-pop="dd MMMM yyyy" class="form-control"
                            placeholder="{{'label.input.duedate' | translate}}" ng-model="charge.dueDate"
                            is-open="'openedch'+$index" min="minDate" max="'2020-06-22'"/>
                 </td>

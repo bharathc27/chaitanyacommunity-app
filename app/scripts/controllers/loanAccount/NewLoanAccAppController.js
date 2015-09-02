@@ -65,6 +65,12 @@
                 });
             }
 
+            scope.$watch('date.second ', function(){
+                if(scope.date.second != '' && scope.date.second != undefined){
+                    scope.date.third = scope.date.second;
+                }
+            });
+
             scope.previewClientLoanAccInfo = function () {
                 scope.previewRepayment = false;
                 scope.charges = scope.loanaccountinfo.charges || [];

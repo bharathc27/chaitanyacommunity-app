@@ -41,7 +41,7 @@
                             scope.disbursementDetails[i].principal = data.disbursementDetails[i].principal;
                             scope.showTrancheAmountTotal += Number(data.disbursementDetails[i].principal) ;
                         }
-                    });
+                    });scope.taskPermissionName = 'APPROVE_LOAN';
                     break;
                 case "reject":
                     scope.title = 'label.heading.rejectloanaccount';

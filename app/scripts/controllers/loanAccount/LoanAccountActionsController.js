@@ -364,6 +364,11 @@
                     scope.showDateField = false;
                     scope.taskPermissionName = 'UPDATE_DISBURSEMENTDETAIL';
                     break;
+                case "undolastdisbursal":
+                    scope.title = 'label.heading.undolastdisbursal';
+                    scope.showDateField = false;
+                    scope.taskPermissionName = 'LASTDISBURSALUNDO_LOAN';
+                    break;
             }
 
             scope.cancel = function () {

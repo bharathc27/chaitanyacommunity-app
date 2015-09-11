@@ -117,6 +117,9 @@
                     case "loanscreenreport":
                         location.path('/loanscreenreport/' + accountId);
                         break;
+                    case "undolastdisbursal":
+                        location.path('/loanaccount/' + accountId + '/undolastdisbursal');
+                        break;
                 }
             };
 
@@ -326,6 +329,10 @@
                             {
                                 name: "button.recoverguarantee",
                                 taskPermissionName: 'RECOVERGUARANTEES_LOAN'
+                            },
+                            {
+                                name: "button.undolastdisbursal",
+                                taskPermissionName: 'LASTDISBURSALUNDO_LOAN'
                             }
                         ]
 
@@ -342,6 +349,9 @@
                             icon: "icon-flag",
                             taskPermissionName: 'DISBURSETOSAVINGS_LOAN'
                         });
+                    }
+                    if(data.disbursementDetails.length == 0){
+                        scope.buttons.options.splice(scope.buttons.options.length-1,1);
                     }
                     //loan officer not assigned to loan, below logic
                     //helps to display otherwise not

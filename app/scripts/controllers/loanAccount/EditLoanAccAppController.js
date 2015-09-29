@@ -193,7 +193,7 @@
 
             scope.syncDisbursementWithMeetingchange = function () {
                 if (scope.formData.syncDisbursementWithMeeting) {
-                    scope.formData.syncRepaymentsWithMeeting = true;
+                    scope.formData.syncRepaymentsWithMeeting = false;
                 }
             };
 

@@ -428,6 +428,9 @@
                     scope.formData.routingCode =scope.paymentDetail.routingCode;
                     scope.formData.receiptNumber = scope.paymentDetail.receiptNumber;
                     scope.formData.bankNumber = scope.paymentDetail.bankNumber;
+                }else{
+                    //default payment type is cash for chaitanya
+                    scope.formData.paymentTypeId = 750;
                 }
                 scope.formData.bulkDisbursementTransactions = [];
                 //construct loan repayment and savings due transactions

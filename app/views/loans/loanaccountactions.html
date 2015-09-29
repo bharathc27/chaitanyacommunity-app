@@ -38,7 +38,7 @@
 
         <div class="col-sm-3">
             <input id="{{nextRepaymentDate}}" sort type="text" datepicker-pop="dd MMMM yyyy" class="form-control"
-                   ng-model="formData.nextRepaymentDate" min="'2000-01-01'" max="restrictDate"/>
+                   ng-model="formData.nextRepaymentDate" min="'2000-01-01'" max="restrictDate" ng-disabled="true"/>
         </div>
     </div>
     <div class="form-group" ng-show="action == 'disburse'">
@@ -46,7 +46,7 @@
 
         <div class="col-sm-3">
             <input id="{{adjustRepaymentDate}}" sort type="text" datepicker-pop="dd MMMM yyyy" class="form-control"
-                   ng-model="formData.adjustRepaymentDate" min="'2000-01-01'" max="restrictDate"/>
+                   ng-model="formData.adjustRepaymentDate" min="minDate" max="'2020-06-22'"/>
         </div>
     </div>
     <!-- end -->

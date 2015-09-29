@@ -725,8 +725,7 @@
             };
 
             scope.showEdit = function(disbursementDetail){
-                if((!disbursementDetail.actualDisbursementDate || disbursementDetail.actualDisbursementDate == null)
-                    && scope.status =='Approved'){
+                if((!disbursementDetail.actualDisbursementDate || disbursementDetail.actualDisbursementDate == null)){
                     return true;
                 }
                 return false;

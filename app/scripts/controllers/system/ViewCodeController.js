@@ -13,17 +13,27 @@
                 scope.codevalues = data;
             });
 
+            scope.setChoice = function () {
+                if (this.formData.isActive) {
+                    scope.choice = 1;
+                }
+                else if (!this.formData.isActive) {
+                    scope.choice = 0;
+                }
+            };
+
             scope.delCode = function () {
                 $modal.open({
                     templateUrl: 'deletecode.html',
                     controller: CodeDeleteCtrl
                 });
             };
-            scope.showEdit = function (id, name, description,position, cv) {
+            scope.showEdit = function (id, name, description,position, cv,isActive) {
                 scope.formData[id] = {
                     name: name,
                     description:description,
-                    position: position
+                    position: position,
+                    isActive: isActive
                 }
                 cv.edit = !cv.edit;
             };

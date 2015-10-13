@@ -6,6 +6,7 @@
             scope.newEle = undefined;
             scope.codevalueerror = false;
             scope.newEle = {};
+            scope.newEle.isActive = false;
 
             resourceFactory.codeResources.get({codeId: routeParams.id}, function (data) {
                 scope.code = data;
@@ -16,6 +17,15 @@
                 scope.codevalues = data;
 
             });
+
+            scope.setChoice = function () {
+                if (this.newEle.isActive) {
+                    scope.choice = 1;
+                }
+                else if (!this.newEle.isActive) {
+                    scope.choice = 0;
+                }
+            };
 
             scope.addCv = function () {
                 if (scope.newEle != undefined && scope.newEle.hasOwnProperty('name')) {

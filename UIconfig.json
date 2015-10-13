@@ -24,13 +24,15 @@
 		"transactionProcessingStrategyId": true,
 		"graceOnInterestPayment": true,
 		"graceOnArrearsAgeing": true
+
 	  },
 	  "isHiddenSection": {
 		"interestRecalculationSection": true,
 		"collateralSection": true
 	  },
 	  "isReadOnlyField": {
-		"loanTermFrequencyType": true
+		"loanTermFrequencyType": true,
+		"interestRatePerPeriod": true
 	  }
 	}
   }

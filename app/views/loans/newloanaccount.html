@@ -206,7 +206,7 @@
                         class="required">*</span></label></td>
                 <td class="paddedbottom10">
                     <input id="interestRatePerPeriod" class="form-control" type="text" name="nominalinterestrate"
-                           ng-model="formData.interestRatePerPeriod" ng-disabled="response.uiDisplayConfigurations.loanAccount.isReadOnlyField.interestRatePerPeriod == true" required late-Validate/>&nbsp;&nbsp;{{loanaccountinfo.interestRateFrequencyType.value}}
+                           ng-model="formData.interestRatePerPeriod" ng-disabled="true" required late-Validate/>&nbsp;&nbsp;{{loanaccountinfo.interestRateFrequencyType.value}}
                 </td>
                 <td ng-hide="response.uiDisplayConfigurations.loanAccount.isHiddenField.interestType == true"><label>{{ 'label.input.interestmethod' | translate }}</label></td>
                 <td class="paddedbottom10" ng-hide="response.uiDisplayConfigurations.loanAccount.isHiddenField.interestType == true">

@@ -118,14 +118,14 @@
             };
 
             scope.showPaymentDetailsFn = function () {
-                var paymentDetail = {};
+                scope.paymentDetail = {};
                 scope.showPaymentDetails = true;
-                paymentDetail.paymentTypeId = "";
-                paymentDetail.accountNumber = "";
-                paymentDetail.checkNumber = "";
-                paymentDetail.routingCode = "";
-                paymentDetail.receiptNumber = "";
-                paymentDetail.bankNumber = "";
+                scope.paymentDetail.paymentTypeId = 750;
+                scope.paymentDetail.accountNumber = "";
+                scope.paymentDetail.checkNumber = "";
+                scope.paymentDetail.routingCode = "";
+                scope.paymentDetail.receiptNumber = "";
+                scope.paymentDetail.bankNumber = "";
             };
 
             scope.previewCollectionSheet = function () {
